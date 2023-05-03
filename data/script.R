@@ -16,4 +16,6 @@ afastamentos <- paste0(anomes, '_Afastamentos.csv')
 observacoes <- paste0(anomes, '_Observacoes.csv')
 remuneracao <- paste0(anomes, '_Remuneracao.csv')
 
+cadastro <- read.csv2(cadastros, dec =",", fileEncoding='latin1')
 
+file.remove(c('dataset.zip'))
