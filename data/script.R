@@ -7,24 +7,19 @@ mes <- ifelse(mes<10, paste0('0',mes), mes)
 
 anomes <- paste0(year(Sys.Date()), mes)
 
-url <- paste0('https://portaldatransparencia.gov.br/download-de-dados/servidores/', anomes, '_Servidores_SIAPE/')
+url <- paste0('https://portaldatransparencia.gov.br/download-de-dados/servidores/', anomes, '_Servidores_SIAPE')
+destino <- "dataset.zip"
+Map(function(u, d) download.file(u, d, mode="wb"), url, destino)
+unzip ("dataset.zip")
 
 cadastros <- paste0(anomes, '_Cadastro.csv')
 afastamentos <- paste0(anomes, '_Afastamentos.csv')
 observacoes <- paste0(anomes, '_Observacoes.csv')
 remuneracao <- paste0(anomes, '_Remuneracao.csv')
 
-temp <- tempfile()
-download.file(url,temp, mode="wb")
-unzip(temp, cadastros)
+cadastro <- read.csv2(cadastros, dec =",", fileEncoding='latin1')
 
-#download(url, dest="dataset.zip", mode="wb") 
-#unzip ("dataset.zip")
-
-#cadastro <- read.csv2(cadastros, dec =",", fileEncoding='latin1')
-cadastro <- read.table(cadastros, sep=";",dec =",", header=T)
-
-#file.remove(c('dataset.zip', cadastros, afastamentos, observacoes, remuneracao))
+file.remove(c('dataset.zip', cadastros, afastamentos, observacoes, remuneracao))
 
 
 atrasados <- c(102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,
@@ -47,3 +42,4 @@ atrasadosBR <- tecnicosBR %>%
   
 
 saveRDS(tecnicosBR,'data/tecnicosBR.rds')
+
