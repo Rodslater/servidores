@@ -22,7 +22,6 @@ jobs:
             any::dplyr
             any::downloader
             any::lubridate
-            any::rio
             
       - name: Execute Script
         run: |
