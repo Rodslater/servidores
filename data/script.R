@@ -1,6 +1,5 @@
 library(dplyr)
 library(downloader)
-library(rio)
 library(lubridate)
 
 mes <- month(Sys.Date())-2
@@ -17,8 +16,7 @@ afastamentos <- paste0(anomes, '_Afastamentos.csv')
 observacoes <- paste0(anomes, '_Observacoes.csv')
 remuneracao <- paste0(anomes, '_Remuneracao.csv')
 
-cadastro <- import(cadastros)
-
+cadastro <- read.csv2(cadastros, dec =",", fileEncoding='latin1')
 
 file.remove(c('dataset.zip', cadastros, afastamentos, observacoes, remuneracao))
 
