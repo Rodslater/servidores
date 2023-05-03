@@ -7,9 +7,9 @@ mes <- ifelse(mes<10, paste0('0',mes), mes)
 
 anomes <- paste0(year(Sys.Date()), mes)
 
+options(timeout=100)
 url <- paste0('https://portaldatransparencia.gov.br/download-de-dados/servidores/', anomes, '_Servidores_SIAPE')
-destino <- "dataset.zip"
-Map(function(u, d) download.file(u, d, mode="wb"), url, destino)
+download(url, dest="dataset.zip", mode="wb") 
 unzip ("dataset.zip")
 
 cadastros <- paste0(anomes, '_Cadastro.csv')
