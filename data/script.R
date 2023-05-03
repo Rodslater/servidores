@@ -1,6 +1,5 @@
 library(dplyr)
 library(downloader)
-library(writexl)
 library(rio)
 library(lubridate)
 
