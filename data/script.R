@@ -3,7 +3,7 @@ library(lubridate)
 library(downloader)
 library(dplyr)
 
-options(timeout = 300)
+options(timeout = 200)
 
 datas <- c()
 for (i in 0:3) {
