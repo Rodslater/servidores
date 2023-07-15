@@ -3,6 +3,8 @@ library(lubridate)
 library(downloader)
 library(dplyr)
 
+options(timeout = 300)
+
 datas <- c()
 for (i in 0:3) {
   mes <- month(Sys.Date()) - i
