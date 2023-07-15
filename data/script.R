@@ -3,6 +3,7 @@ library(lubridate)
 library(downloader)
 library(dplyr)
 
+memory.limit(24576)
 options(timeout = 200)
 
 datas <- c()
