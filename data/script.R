@@ -4,7 +4,7 @@ library(downloader)
 library(dplyr)
 
 datas <- c()
-for (i in 0:5) {
+for (i in 0:3) {
   mes <- month(Sys.Date()) - i
   mes <- ifelse(mes < 10, paste0('0', mes), mes)
   
