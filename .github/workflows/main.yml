@@ -22,6 +22,7 @@ jobs:
             any::dplyr
             any::downloader
             any::lubridate
+            any::httr
             
       - name: Execute Script
         run: |
