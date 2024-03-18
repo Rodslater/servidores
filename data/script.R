@@ -29,7 +29,7 @@ for (i in seq_along(datas)) {
     next
   }
   
-  url <- paste0('https://portaldatransparencia.gov.br/download-de-dados/servidores/', datas[i], '_Servidores_SIAPE', '.zip')
+  url <- paste0('https://portaldatransparencia.gov.br/download-de-dados/servidores/', datas[i], '_Servidores_SIAPE')
   
   # Verifica se o arquivo existe antes de fazer o download
   response <- tryCatch(
